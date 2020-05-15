@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="email_address">Email-Address</string>
+    <string name="login">Login</string>
+    <string name="signup">signup</string>
+    <string name="my_internship">My Internship</string>
+    <string name="password">Password</string>
+    <string name="Resigter">Register</string>
+    <string name="NPISID">NPISID</string>
+    <string-array name="course_list">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </string-array>
+    <string-array name="student_list">
+        <item>tanA</item>
+        <item>tanB</item>
+        <item>tanC</item>
+        <item>tanD</item>
+        <item>tanE</item>
+        <item>tanF</item>
+        <item>tanG</item>
+        <item>tanH</item>
+    </string-array>
+</resources>
