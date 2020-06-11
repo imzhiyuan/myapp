@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.838" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/loginpw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -32,12 +32,12 @@
         app:layout_constraintVertical_bias="0.358" />
 
     <EditText
-        android:id="@+id/useremail"
+        android:id="@+id/loginid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/email_address"
+        android:hint="@string/NPISID"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

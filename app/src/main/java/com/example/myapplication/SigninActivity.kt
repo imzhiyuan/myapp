@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -50,12 +51,12 @@ open class SigninActivity: AppCompatActivity(){
             AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-                    // An item was selected. You can retrieve the selected item using
+                    // An item was selected.
                     course = parent.getItemAtPosition(pos).toString()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Another interface callback
+
                 }
             }
         }
@@ -64,7 +65,7 @@ open class SigninActivity: AppCompatActivity(){
         // trying to sent data to sever
 
         Register.setOnClickListener {
-            val textView = findViewById<TextView>(R.id.textView)
+           // val textView = findViewById<TextView>(R.id.textView)
             val queue = Volley.newRequestQueue(this)
             val url = "https://script.google.com/macros/s/AKfycbwesIpox7baQaH7TMba_MiUnp6xI6D2DKp6RL-e16_GYDX_R4s/exec"
 
@@ -72,13 +73,12 @@ open class SigninActivity: AppCompatActivity(){
             val stringRequest = object: StringRequest(Request.Method.POST, url,
                 Response.Listener<String> {
                     // Display the first 500 characters of the response string.
-                    textView.text = "it worked!"
+                   // textView.text = "it worked!"
     },
-                Response.ErrorListener { textView.text = "That didn't work!" }) {
-
+                Response.ErrorListener { /*textView.text = "That didn't work!"*/ }) {
+                //sending the data to the sheets
                 override fun getParams(): Map<String, String> {
                     val params: MutableMap<String, String> = HashMap()
-                    //Change with your post params
                     params["action"] = "Register"
                     params["NPISID"] = npisid.text.toString()
                     params["COURSE"] = course
@@ -90,6 +90,8 @@ open class SigninActivity: AppCompatActivity(){
             }
             // Add the request to the RequestQueue.
             queue.add(stringRequest)
+            // register complete go to login page
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }
